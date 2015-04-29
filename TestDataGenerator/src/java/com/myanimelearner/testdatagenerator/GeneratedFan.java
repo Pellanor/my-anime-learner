@@ -22,10 +22,10 @@ public class GeneratedFan extends DefaultFan{
         nextId++;
         avgRating = PseudoRandomGenerator.generatePreference(0);
         for (int i = 0; i < Consts.ABS_SIZE ; i++) {
-            absolutePrefs.add(PseudoRandomGenerator.generatePreference(avgRating));
+            absolutePrefs.add(PseudoRandomGenerator.generatePreference(0.0));
         }
         for (int i = 0; i < Consts.REL_SIZE ; i++) {
-            relativePrefs.add(PseudoRandomGenerator.generatePreference(avgRating));
+            relativePrefs.add(PseudoRandomGenerator.generatePreference(0.0));
         }
     }
 
