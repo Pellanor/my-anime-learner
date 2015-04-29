@@ -1,2 +1,4 @@
-# anime-network
-Neural Network for recomendations based on MAL
+# My Anime Learner
+Neural Network for recommendations based on MAL
+
+Inspired by @DeepGabe
