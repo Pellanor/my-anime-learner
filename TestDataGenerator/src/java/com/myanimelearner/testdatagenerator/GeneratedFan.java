@@ -9,7 +9,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeneratedFan extends DefaultFan{
+public class GeneratedFan extends DefaultFan {
 
     static int nextId = 1;
 

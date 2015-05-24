@@ -1,12 +1,15 @@
 package com.myanimelearner.data;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.io.Serializable;
 import java.text.NumberFormat;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class AnimeList implements Map<Anime, Double> {
+public class AnimeList implements Map<Anime, Double>, Serializable {
     private Map<Anime, Double> map = new HashMap<>();
 
     @Override
@@ -49,7 +52,7 @@ public class AnimeList implements Map<Anime, Double> {
     }
 
     @Override
-    public void putAll(Map<? extends Anime, ? extends Double> m) {
+    public void putAll(@NotNull Map<? extends Anime, ? extends Double> m) {
         for(Entry<? extends Anime, ? extends Double> entry : m.entrySet()) {
             put(entry.getKey(), entry.getValue());
         }
@@ -61,16 +64,19 @@ public class AnimeList implements Map<Anime, Double> {
     }
 
     @Override
+    @NotNull
     public Set<Anime> keySet() {
         return map.keySet();
     }
 
     @Override
+    @NotNull
     public Collection<Double> values() {
         return map.values();
     }
 
     @Override
+    @NotNull
     public Set<Entry<Anime, Double>> entrySet() {
         return map.entrySet();
     }

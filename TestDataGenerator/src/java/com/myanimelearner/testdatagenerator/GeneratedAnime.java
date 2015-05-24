@@ -34,15 +34,24 @@ public class GeneratedAnime extends DefaultAnime {
         sb.append("Anime #");
         sb.append(getID());
         sb.append(System.getProperty("line.separator"));
+        sb.append("    Rating: ");
+        sb.append(formatter.format(getRating()));
+        sb.append(System.getProperty("line.separator"));
+        sb.append("    Variance: ");
+        sb.append(formatter.format(getVariance()));
+        sb.append(System.getProperty("line.separator"));
+        sb.append("    Absolute: ");
         for(Double d : absoluteQualities) {
             sb.append(formatter.format(d));
             sb.append(", ");
         }
         sb.append(System.getProperty("line.separator"));
+        sb.append("    Subjective: ");
         for(Double d : subjectiveQualities) {
             sb.append(formatter.format(d));
             sb.append(", ");
         }
         sb.append(System.getProperty("line.separator"));
-        return sb.toString();    }
+        return sb.toString();
+    }
 }

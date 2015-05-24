@@ -21,8 +21,8 @@ public class PseudoRandomGenerator {
     }
 
     public static int generateNumberOfAnimeWatched(int animeCount) {
-        int mean = animeCount / 5;
-        int stdDev = animeCount / 10;
+        int mean = 100;
+        int stdDev = 25;
         int result;
         do {
             result = (int) (generateGaussianNoise(stdDev) + mean);

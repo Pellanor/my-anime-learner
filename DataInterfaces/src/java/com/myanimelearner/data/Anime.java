@@ -1,10 +1,14 @@
 package com.myanimelearner.data;
 
-public interface Anime {
+import java.io.Serializable;
+
+public interface Anime extends Serializable {
 
     int getID();
     void setID(int id);
 
     double getRating();
     void addRating(double rating);
+
+    double getVariance();
 }

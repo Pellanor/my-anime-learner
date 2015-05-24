@@ -4,7 +4,8 @@ import com.myanimelearner.data.Anime;
 
 public class DefaultAnime implements Anime {
     private int id;
-    private double rating = 0.0;
+    private double avgRating = 0.0;
+    private double variance = 0.0;
     private int ratingCount = 1;
 
     @Override
@@ -19,12 +20,20 @@ public class DefaultAnime implements Anime {
 
     @Override
     public double getRating() {
-        return rating;
+        return avgRating;
     }
 
     @Override
     public void addRating(double rating) {
-        this.rating += (rating - this.rating) / ratingCount;
+        //Update average on the fly
+        double delta = (rating - this.avgRating);
+        this.avgRating += delta / ratingCount;
+        this.variance += delta * (rating - avgRating);
         ratingCount++;
+    }
+
+    @Override
+    public double getVariance() {
+        return variance / ratingCount;
     }
 }
